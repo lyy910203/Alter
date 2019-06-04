@@ -158,8 +158,8 @@ class Email():
         ret = True
         try:
             msg = MIMEText(message, 'plain', 'utf-8')
-            msg['From'] = formataddr(["FromRunoob", self.from_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
-            msg['To'] = formataddr(["FK", to_mail])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+            msg['From'] = formataddr([str(self.from_sender), self.from_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
+            msg['To'] = formataddr([str(to_mail), to_mail])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
             msg['Subject'] = title  # 邮件的主题，也可以说是标题
             if not self.smtp_ssl:
                 server = smtplib.SMTP(self.smtp,self.smtp_port)
