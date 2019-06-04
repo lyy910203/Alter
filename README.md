@@ -17,7 +17,7 @@ pip install alter
 ```bash
 pip install requests
 ```
-下载Alter.py到你的项目，建议Alter.py的目录有一个__init__.py的空白文件  
+下载alter.py到你的项目，建议alter.py的目录有一个__init__.py的空白文件  
 ### 使用  
 * ##### 钉钉webhook机器人  
 ``` python  
