@@ -8,6 +8,10 @@
 * 企业微信自定义应用  
  
 ### 安装  
+需要先安装requests模块  
+```bash
+pip install requests
+```
 下载Alter.py到你的项目，建议Alter.py的目录有一个__init__.py的空白文件  
 ### 使用  
 * ##### 钉钉webhook机器人  
