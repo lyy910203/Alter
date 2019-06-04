@@ -8,6 +8,11 @@
 * 企业微信自定义应用  
  
 ### 安装  
+* ##### 一步到胃  
+```bash
+pip install alter
+```
+* ##### 多步安装
 需要先安装requests模块  
 ```bash
 pip install requests
@@ -16,8 +21,8 @@ pip install requests
 ### 使用  
 * ##### 钉钉webhook机器人  
 ``` python  
-import Alter
-dtack = Alter.DinTalk("e897e8fec**********") #webhook地址，只需要webhook=后面的值
+import alter
+dtack = alter.DinTalk("e897e8fec**********") #webhook地址，只需要webhook=后面的值
 ret = dtack.sendmessage("13996438187","消息") #发送的用户，以及发送的消息，多用户使用"user1|user2|user3"
 if ret["errcode"]:
     print("发送成功")
@@ -26,8 +31,8 @@ else:
 ```
 * ##### EMAIL  
 ``` python  
-import Alter
-smtp = Alter.Email("发件人账号","发件人密码",smtp = "smtp地址",smtp_port="smtp端口 int",smtp_ssl=False)#默认ssl是True
+import alter
+smtp = alter.Email("发件人账号","发件人密码",smtp = "smtp地址",smtp_port="smtp端口 int",smtp_ssl=False)#默认ssl是True
 ret = smtp.sendmessage("收件人账号",'标题','内容')
 if ret["errcode"]:
     print("发送成功")
@@ -36,11 +41,11 @@ else:
 ```  
 * ##### 企业微信自定义应用   
 ``` python
-import Alter
+import alter
 corpid = "企业的ID"
 secret = "自定义应用secret"
 agentid = "自定义应用agentid"
-webcat = Alter.WeiXin(corpid,secret,agentid)
+webcat = alter.WeiXin(corpid,secret,agentid)
 ret = webcat.sendmessage("消息接受者（在企业微信后台查看的账号）", "发送内容")
 if ret["errcode"]:
     print("发送成功")
